@@ -1,14 +1,14 @@
 import React from 'react';
 import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+// import Adapter from 'enzyme-adapter-react-16';
 import chai from 'chai';
-import chaiEnzyme from 'chai-enzyme';
+// import chaiEnzyme from 'chai-enzyme';
 import SpringGrid from '../src/components/SpringGrid';
 import CSSGrid from '../src/components/CSSGrid';
 
 configure({ adapter: new Adapter() });
 
-chai.use(chaiEnzyme());
+// chai.use(chaiEnzyme());
 const { expect } = chai;
 
 describe('Grid components common features', function() {
