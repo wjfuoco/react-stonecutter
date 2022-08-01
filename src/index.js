@@ -1,5 +1,4 @@
 import CSSGrid from "./components/CSSGrid";
-import SpringGrid from "./components/SpringGrid";
 
 import makeResponsive from "./higher-order-components/makeResponsive";
 import measureItems from "./higher-order-components/measureItems";
@@ -34,11 +33,10 @@ export const enterExitStyle = {
   skew
 };
 
-export { CSSGrid, SpringGrid, measureItems, makeResponsive, easings };
+export { CSSGrid, measureItems, makeResponsive, easings };
 
 export default {
   CSSGrid,
-  SpringGrid,
   measureItems,
   makeResponsive,
   easings,

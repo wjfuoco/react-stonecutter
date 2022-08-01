@@ -1,41 +1,33 @@
-import React from 'react';
-import { configure, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-import chai from 'chai';
-import chaiEnzyme from 'chai-enzyme';
-import SpringGrid from '../src/components/SpringGrid';
+// import React so you can use JSX (React.createElement) in your test
+import React from 'react'
+
+/**
+ * render: lets us render the component as React would
+ * screen: a utility for finding elements the same way the user does
+ */
+import {render, screen} from '@testing-library/react'
 import CSSGrid from '../src/components/CSSGrid';
 
-configure({ adapter: new Adapter() });
-
-chai.use(chaiEnzyme());
-const { expect } = chai;
-
-describe('Grid components common features', function() {
+describe('Grid components common features', () => {
   const grids = [
-    { name: 'SpringGrid', component: SpringGrid },
     { name: 'CSSGrid', component: CSSGrid }
   ];
 
   grids.forEach(function({ name, component: Grid }) {
-    describe(`<${name} />`, function() {
-      it('Renders children', function() {
-        const wrapper = shallow(<div>
-          <Grid columns={4} columnWidth={150} duration={2000}>
-            <span className="item" />
-            <span className="item" />
-          </Grid>
-        </div>);
+    describe(`<${name} />`, () => {
+      it('Renders children', () => {
+        render(<Grid columns={4} columnWidth={150} duration={2000}>
+          <span className="item" />
+          <span className="item" />
+        </Grid>)
 
-        expect(wrapper)
-          .to.have.exactly(2)
-          .descendants('.item');
-      });
+        expect(screen).to.have.exactly(2).descendants('.item');
+      })
 
-      it('Can change tag name', function() {
-        const wrapper = shallow(<Grid component="ul" columns={4} columnWidth={150} duration={2000} />);
+      it('Can change tag name', () => {
+        render(<Grid component="ul" columns={4} columnWidth={150} duration={2000} />);
 
-        expect(wrapper).to.have.tagName('ul');
+        expect(screen).to.have.tagName('ul');
       });
     });
   });
