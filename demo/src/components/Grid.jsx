@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import isEqualWith from 'lodash.isequalwith';
 import {
-  SpringGrid,
   CSSGrid,
   makeResponsive,
   measureItems,
@@ -25,8 +24,8 @@ export default class extends Component {
     }
   }
 
-  createGrid = ({ useCSS, measured, responsive }) => {
-    let Grid = useCSS ? CSSGrid : SpringGrid;
+  createGrid = ({ measured, responsive }) => {
+    let Grid = CSSGrid;
 
     if (measured) {
       Grid = measureItems(Grid);
@@ -51,8 +50,6 @@ export default class extends Component {
       enterExitStyle,
       duration,
       easing,
-      stiffness,
-      damping,
       gutters,
       columns,
       ...rest
@@ -79,9 +76,6 @@ export default class extends Component {
         perspective={600}
         duration={useCSS ? duration : null}
         easing={useCSS ? easing : null}
-        springConfig={
-          !useCSS && stiffness && damping ? { stiffness, damping } : null
-        }
       >
         {children}
       </Grid>

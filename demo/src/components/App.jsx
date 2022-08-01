@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/no-array-index-key */
 import React, { Component } from "react";
-import { RadioGroup, Radio } from "react-radio-group";
+import { RadioGroup, Radio } from '@mui/material';
 import Slider, { createSliderWithTooltip } from "rc-slider";
 import shuffle from "lodash.shuffle";
 import camelCase from "lodash.camelcase";
@@ -119,12 +119,8 @@ export default class extends Component {
             className="radio-group"
             name="useCSS"
             selectedValue={useCSS ? "css" : "spring"}
-            onChange={value => this.setState({ useCSS: value === "css" })}
+            onChange={event => this.setState({ useCSS: event.target.value === "css" } )}
           >
-            <label>
-              <Radio value="spring" />
-              React Motion
-            </label>
             <label>
               <Radio value="css" />
               CSS Transitions
