@@ -35,11 +35,11 @@ export const enterExitStyle = {
 
 export { CSSGrid, measureItems, makeResponsive, easings };
 
-export default {
-  CSSGrid,
-  measureItems,
-  makeResponsive,
-  easings,
-  layout,
-  enterExitStyle
-};
+// export default {
+//   CSSGrid,
+//   measureItems,
+//   makeResponsive,
+//   easings,
+//   layout,
+//   enterExitStyle
+// };
