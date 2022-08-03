@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import TransitionGroup from 'react-transition-group-plus';
+import { TransitionGroup } from 'react-transition-group';
 import shallowEqual from 'shallowequal';
 import omit from 'lodash.omit';
 import { commonPropTypes, commonDefaultProps } from '../utils/commonProps';
@@ -25,7 +25,8 @@ export default class extends Component {
     this.state = this.doLayout(props);
   }
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!shallowEqual(nextProps, this.props)) {
       this.setState(this.doLayout(nextProps));
     }

@@ -7,7 +7,7 @@ export default function(items, props) {
     columnHeights.push(0);
   }
 
-  const positions = items.map(itemProps => {
+  const positions = items.map((itemProps) => {
     const column = columnHeights.indexOf(Math.min.apply(null, columnHeights));
 
     const height =

@@ -11,17 +11,18 @@ export default class extends Component {
     this.itemIsMounted = true;
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillUnmount() {
+    this.itemIsMounted = false;
+    clearTimeout(this.leaveTimeout);
+  }
+
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (!shallowEqual(nextProps, this.props)) {
       requestAnimationFrame(() => {
         this.setEndStyle(nextProps, 2);
       });
     }
-  }
-
-  componentWillUnmount() {
-    this.itemIsMounted = false;
-    clearTimeout(this.leaveTimeout);
   }
 
   componentWillAppear(done) {
