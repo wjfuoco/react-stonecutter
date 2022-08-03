@@ -15,12 +15,12 @@ const properties = [
   { name: "rotateY", unit: "angle" }
 ];
 
-const isNaN = val => {
+const isNaN = (val) => {
   const n = Number(val);
   return n !== n; // eslint-disable-line no-self-compare
 };
 
-export const positionToProperties = position => ({
+export const positionToProperties = (position) => ({
   translateX: position[0],
   translateY: position[1]
 });
@@ -28,7 +28,7 @@ export const positionToProperties = position => ({
 export const buildTransform = (style, perspective, units) => {
   const arr = [];
 
-  properties.forEach(prop => {
+  properties.forEach((prop) => {
     if (prop.name === "perspective") {
       if (typeof perspective !== "undefined") {
         arr.push(`perspective(${perspective}${units[prop.unit]})`);

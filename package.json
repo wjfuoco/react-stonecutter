@@ -1,15 +1,13 @@
 {
   "name": "react-stonecutter",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Animated grid layout component for React",
   "keywords": [
     "react",
     "react-component",
     "grid"
   ],
-  "exports": {
-    ".": "lib/react-stonecutter.js"
-  },
+  "main": "lib/react-stonecutter.js",
   "scripts": {
     "start": "gulp",
     "gh-pages": "gulp gh-pages",
