@@ -1,6 +1,6 @@
 {
   "name": "react-stonecutter",
-  "version": "0.4.4",
+  "version": "0.4.11",
   "description": "Animated grid layout component for React",
   "keywords": [
     "react",
@@ -76,7 +76,7 @@
     "lodash.omit": "^4.5.0",
     "lodash.partition": "^4.6.0",
     "prop-types": "^15.5.10",
-    "react-transition-group-plus": "^0.5.3",
+    "react-transition-group": "^4.4.5",
     "shallowequal": "^1.1.0"
   },
   "peerDependencies": {

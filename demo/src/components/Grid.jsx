@@ -14,7 +14,8 @@ export default class extends Component {
     this.state = this.createGrid(props);
   }
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line camelcase
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (
       !isEqualWith(nextProps, this.props, (a, b, key) => {
         if (key === 'children') return true;
