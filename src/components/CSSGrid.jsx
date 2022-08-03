@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TransitionGroup } from 'react-transition-group';
+import TransitionGroup from 'react-transition-group-plus';
 import shallowEqual from 'shallowequal';
 import omit from 'lodash.omit';
 import { commonPropTypes, commonDefaultProps } from '../utils/commonProps';
