@@ -1,13 +1,13 @@
 {
-  "name": "react-stonecutter",
-  "version": "0.4.14",
-  "description": "Animated grid layout component for React",
+  "name": "react-stonecutter-css",
+  "version": "1.0.0",
+  "description": "Animated grid layout component for React only using CSS animations",
   "keywords": [
     "react",
     "react-component",
     "grid"
   ],
-  "main": "lib/react-stonecutter.js",
+  "main": "lib/react-stonecutter-css.js",
   "scripts": {
     "start": "gulp",
     "gh-pages": "gulp gh-pages",
@@ -24,7 +24,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wjfuoco/react-stonecutter.git"
+    "url": "https://github.com/wjfuoco/react-stonecutter-css.git"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.9",
@@ -78,9 +78,5 @@
     "prop-types": "^15.5.10",
     "react-transition-group-plus": "^0.5.3",
     "shallowequal": "^1.1.0"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
   }
 }

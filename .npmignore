@@ -12,3 +12,11 @@ Thumbs.db
 .sass-cache
 
 demo/public
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# NPM
+.npmignore
+.npmrc
