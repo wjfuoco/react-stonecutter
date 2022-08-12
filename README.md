@@ -1,46 +1,27 @@
-# react-stonecutter [![npm version](https://img.shields.io/npm/v/react-stonecutter.svg?style=flat)](https://www.npmjs.com/package/react-stonecutter)
+# react-stonecutter-css [![npm version](https://img.shields.io/npm/v/react-stonecutter.svg?style=flat)](https://www.npmjs.com/package/react-stonecutter-css)
 <a href="http://dantrain.github.io/react-stonecutter" title="Demo"><img align="left" src="http://i.imgur.com/qLCLyTN.png" width="120" hspace="10"></a>
 
 Animated grid layout component for React, inspired by [Masonry](http://masonry.desandro.com/).  
 Choose between CSS Transitions or [React-Motion](https://github.com/chenglou/react-motion) for animation.
 
-[Demo](http://dantrain.github.io/react-stonecutter)  
+NOTE - This is a copy of react-stonecutter to support React v18 and remove the peer dependency on React.  Also, this only supports CSS animations.
+
+[Demo](https://wjfuoco.github.io/react-stonecutter-css/)  
 
 ## Installation
 
-With [npm](https://www.npmjs.com/package/react-stonecutter):
+With [npm](https://www.npmjs.com/package/react-stonecutter-css):
 
 ```
-npm install --save react-stonecutter
+npm install --save react-stonecutter-css
 ```
 
 ## Usage
 
-A simple layout with items of equal height:
-
-```js
-import { SpringGrid } from 'react-stonecutter';
-```
-```xml
-<SpringGrid
-  component="ul"
-  columns={5}
-  columnWidth={150}
-  gutterWidth={5}
-  gutterHeight={5}
-  itemHeight={200}
-  springConfig={{ stiffness: 170, damping: 26 }}
->
-  <li key="A">A</li>
-  <li key="B">B</li>
-  <li key="C">C</li>
-</SpringGrid>
-```
-
 A Pinterest-style layout with varying item heights, this time using CSS transitions:
 
 ```js
-import { CSSGrid, layout } from 'react-stonecutter';
+import { CSSGrid, layout } from 'react-stonecutter-css';
 ```
 ```xml
 <CSSGrid
@@ -59,42 +40,11 @@ import { CSSGrid, layout } from 'react-stonecutter';
 </CSSGrid>
 ```
 
-To render React components as children, wrap them in simple elements. This gives you full control of your markup:
-
-```xml
-<SpringGrid
-  component="ul"
-  // ...etc.
->
-  {data.map((datum) => (
-    <li key={datum.id}>
-      <MyComponent datum={datum} />
-    </li>
-  ))}
-</SpringGrid>
-```
-
-If you don't know the heights of your items ahead of time, use the `measureItems` higher-order component to measure them in the browser before layout:
-
-```js
-import { SpringGrid, measureItems } from 'react-stonecutter';
-
-const Grid = measureItems(SpringGrid);
-```
-```xml
-<Grid
-  // ...etc.
->
-  <li key="A">Who controls the British crown?</li>
-  <li key="B">Who keeps the metric system down?</li>
-  <li key="C">We do!</li>
-  <li key="D">We do!</li>
-</Grid>
-```
+If you don't know the heights of your items ahead of time, use the `measureItems` higher-order component to measure them in the browser before layout.
 
 If your grid spans the page and you want to vary the number of columns based on the viewport width, use the `makeResponsive` higher-order component which makes use of [enquire.js](http://wicky.nillia.ms/enquire.js/):
 ```js
-import { CSSGrid, measureItems, makeResponsive } from 'react-stonecutter';
+import { CSSGrid, measureItems, makeResponsive } from 'react-stonecutter-css';
 
 const Grid = makeResponsive(measureItems(CSSGrid), {
   maxWidth: 1920,
@@ -105,7 +55,6 @@ const Grid = makeResponsive(measureItems(CSSGrid), {
 ## API Reference
 
 Exports:
-* `SpringGrid`
 * `CSSGrid`
 * `measureItems`
 * `makeResponsive`
@@ -113,7 +62,7 @@ Exports:
 * `enterExitStyle`
 * `easings`
 
-### SpringGrid and CSSGrid props
+### CSSGrid props
 
 **columns={`Number`}**  
 Number of columns. Required.  
@@ -135,7 +84,7 @@ Change the HTML tagName of the Grid element, for example to `'ul'` or `'ol'` for
 Use one of the included layouts, or create your own. Defaults to a 'simple' layout with items of fixed height.  
 Included layouts:
 ```js
-import { layout } from 'react-stonecutter';
+import { layout } from 'react-stonecutter-css';
 
 const { simple, pinterest } = layout;
 ```
@@ -182,11 +131,11 @@ CSS [`transform-functions`](https://developer.mozilla.org/en-US/docs/Web/CSS/tra
 
 Some example functions are included:
 ```js
-import { enterExitStyle } from 'react-stonecutter';
+import { enterExitStyle } from 'react-stonecutter-css';
 
 const { enter, entered, exit } = enterExitStyle.foldUp;
 ```
-Check out the [demo](http://dantrain.github.io/react-stonecutter) to see them in action.
+Check out the [demo](http://wjfuoco.github.io/react-stonecutter-css) to see them in action.
 
 **perspective={`Number`}**  
 The [`perspective`](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/perspective) distance used for 3D transforms. If you are using a transform function like `rotateX`, use this to strengthen the effect. Default is no perspective applied.
@@ -197,12 +146,6 @@ The [length](https://developer.mozilla.org/en-US/docs/Web/CSS/length) unit used 
 **angleUnit={`String`}**  
 The [angle](https://developer.mozilla.org/en-US/docs/Web/CSS/angle) unit. Affects `transform-functions` such as `rotate`. Default: `'deg'`.
 
-### SpringGrid only props
-
-**springConfig={`Object`}**  
-Configuration of the React-Motion spring. See the [React-Motion docs](https://github.com/chenglou/react-motion#helpers) for more info.
-Default: `{ stiffness: 60, damping: 14, precision: 0.1 }`.
-
 ### CSSGrid only props
 
 **duration={`Number`}**  
@@ -211,7 +154,7 @@ Animation duration in `ms`. Required.
 **easing={`String`}**  
 Animation easing function in CSS [transition-timing-function](https://developer.mozilla.org/en/docs/Web/CSS/transition-timing-function) format. Some [Penner easings](https://matthewlein.com/ceaser/) are included for convenience:
 ```js
-import { easings } from 'react-stonecutter';
+import { easings } from 'react-stonecutter-css';
 
 const { quadIn, quadOut, /* ..etc. */  } = easings;
 ```
@@ -232,7 +175,7 @@ This option is passed through to the [imagesLoaded](https://github.com/desandro/
 ### makeResponsive options
 Pass like this:
 ```js
-const Grid = makeResponsive(SpringGrid, { maxWidth: 1920 })
+const Grid = makeResponsive(CSSGrid, { maxWidth: 1920 })
 ```
 
 **maxWidth: `Number`**  

@@ -48,7 +48,7 @@ const libWebpackConfig = assign({}, sharedWebpackConfig, {
   entry: path.join(__dirname, "./src/index.js"),
   output: {
     path: path.join(__dirname, "./lib"),
-    filename: "react-stonecutter.js",
+    filename: "react-stonecutter-css.js",
     library: {
       type: 'commonjs-static'
     }
