@@ -1,7 +1,7 @@
 {
-  "name": "react-stonecutter",
-  "version": "0.4.1",
-  "description": "Animated grid layout component for React",
+  "name": "react-stonecutter-css",
+  "version": "1.0.0",
+  "description": "Animated grid layout component for React only using CSS animations",
   "keywords": [
     "react",
     "react-component",
