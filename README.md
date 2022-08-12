@@ -1,12 +1,16 @@
-# react-stonecutter-css [![npm version](https://img.shields.io/npm/v/react-stonecutter.svg?style=flat)](https://www.npmjs.com/package/react-stonecutter-css)
-<a href="http://dantrain.github.io/react-stonecutter" title="Demo"><img align="left" src="http://i.imgur.com/qLCLyTN.png" width="120" hspace="10"></a>
+# react-stonecutter-css [![npm version](https://img.shields.io/npm/v/react-stonecutter-css.svg?style=flat)](https://www.npmjs.com/package/react-stonecutter-css)
+<a href="http://wjfuoco.github.io/react-stonecutter-css" title="Demo"><img align="left" src="http://i.imgur.com/qLCLyTN.png" width="120" hspace="10"></a>
 
 Animated grid layout component for React, inspired by [Masonry](http://masonry.desandro.com/).  
-Choose between CSS Transitions or [React-Motion](https://github.com/chenglou/react-motion) for animation.
+This uses CSS Transitions for animation.
 
-NOTE - This is a copy of react-stonecutter to support React v18 and remove the peer dependency on React.  Also, this only supports CSS animations.
+NOTE - This is a copy of react-stonecutter to support React v18 and remove the peer dependency on React.  Also, this only supports CSS animations.  This is based off Dan Train's original [react-stonecutter](https://github.com/dantrain/react-stonecutter) package and removes React-Motion.
+
+## Demo
 
 [Demo](https://wjfuoco.github.io/react-stonecutter-css/)  
+
+Building the code locally with gulp and running the demo/public/index.html file will also give you a demo.  Or see the original [demo link](http://dantrain.github.io/react-stonecutter/) and select CSS Transitions and Responsive.
 
 ## Installation
 
