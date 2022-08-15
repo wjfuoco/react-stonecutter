@@ -166,9 +166,9 @@ gulp.task(
   ])
 );
 
-gulp.task("gh-pages", done => {
-  runSequence("gh-pages-start", "copy-demo-to-root", "gh-pages-end", done);
-});
+gulp.task('gh-pages', gulp.series("gh-pages-start", "copy-demo-to-root", "gh-pages-end", function (done) {
+  done();
+}));
 
 gulp.task("lint", () =>
   gulp
